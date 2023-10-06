@@ -116,7 +116,6 @@
     <section class="goods" hidden>
       <div class="container">
         <h2 class="goods__title">Избранное</h2>
-
         <ul class="goods__list">
           <li class="goods__item">
             <article class="goods__card card">
@@ -385,7 +384,6 @@
         </div>
         <form action="" class="cart__form form-order" id="form" method="post">
           <h3 class="cart__subtitle">Данные для доставки</h3>
-
           <fieldset class="form-order__fieldset form-order__fieldset_input">
             <input type="text" class="form-order__input" name="name" placeholder="Фамилия Имя Отчество">
             <input type="tel" class="form-order__input" name="phone" placeholder="Телефон">
@@ -411,10 +409,50 @@
               <input type="radio" class="radio__input" name="paymentType" value="cash">Наличными при получении
             </label>
           </fieldset>
-
         </form>
       </div>
     </section>
+    <section class="order">
+      <div class="container order__container">
+        <div class="order__info">
+          <h3 class="order__title">Заказ успешно размещен</h3>
+          <p class="order__price">20 000 ₽</p>
+          <p class="ordert__article">№43435</p>
+        </div>
+        <h4 class="order__subtitle">Данные доставки</h4>
+        <table class="order__table tableOrder">
+          <tr class="tableOrder__row">
+            <td class="tableOrder__field">Получатель</td>
+            <td class="tableOrder__value">Иванов Петр Александрович</td>
+          </tr>
+          <tr class="tableOrder__row">
+            <td class="tableOrder__field">Телефон</td>
+            <td class="tableOrder__value">+7 (737) 346 23 00</td>
+          </tr>
+          <tr class="tableOrder__row">
+            <td class="tableOrder__field">E-mail</td>
+            <td class="tableOrder__value">Ivanov84@gmail.com</td>
+          </tr>
+          <tr class="tableOrder__row">
+            <td class="tableOrder__field">Адрес доставки</td>
+            <td class="tableOrder__value">Москва, ул. Ленина, 21, кв. 33</td>
+          </tr>
+          <tr class="tableOrder__row">
+            <td class="tableOrder__field">Способ оплаты</td>
+            <td class="tableOrder__value">Картой при получении</td>
+          </tr>
+          <tr class="tableOrder__row">
+            <td class="tableOrder__field">Способ получения</td>
+            <td class="tableOrder__value">Доставка</td>
+          </tr>
+          
+        </table>
+
+        <a href="/" class="order__btn" form="order">На главную
+        </a>
+      </div>
+    </section>
+    <!-- /.order -->
     <!-- /.cart -->
     <!-- /.product -->
     <!-- /.goods -->
