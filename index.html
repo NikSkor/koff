@@ -118,19 +118,21 @@
         </ul>
       </div>
     </div>
-    <section class="goods" hidden>
+    <section class="goods" >
       <div class="container">
         <h2 class="goods__title">Избранное</h2>
         <ul class="goods__list">
           <li class="goods__item">
             <article class="goods__card card">
-              <a href="/product" class="card__link">
+              <a href="/product" class="card__link card__link_img">
                 <img src="/img/chair.jpg" alt="Кресло с подлокотниками" class="card__image">
               </a>
-              <h3 class="card__title">
-                <a href="/product" class="card__link">Кресло с подлокотниками</a>
-              </h3>
-              <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              <div class="card__info">
+                <h3 class="card__title">
+                  <a href="/product" class="card__link">Кресло с подлокотниками</a>
+                </h3>
+                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              </div>
               <button class="card__btn">В корзину</button>
               <button class="card__favourite">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,13 +145,15 @@
           </li>
           <li class="goods__item">
             <article class="goods__card card">
-              <a href="/product" class="card__link">
+              <a href="/product" class="card__link card__link_img">
                 <img src="/img/chair.jpg" alt="Кресло с подлокотниками" class="card__image">
               </a>
-              <h3 class="card__title">
-                <a href="/product" class="card__link">Кресло с подлокотниками</a>
-              </h3>
-              <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              <div class="card__info">
+                <h3 class="card__title">
+                  <a href="/product" class="card__link">Кресло с подлокотниками</a>
+                </h3>
+                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              </div>
               <button class="card__btn">В корзину</button>
               <button class="card__favourite">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,13 +166,15 @@
           </li>
           <li class="goods__item">
             <article class="goods__card card">
-              <a href="/product" class="card__link">
+              <a href="/product" class="card__link card__link_img">
                 <img src="/img/chair.jpg" alt="Кресло с подлокотниками" class="card__image">
               </a>
-              <h3 class="card__title">
-                <a href="/product" class="card__link">Кресло с подлокотниками</a>
-              </h3>
-              <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              <div class="card__info">
+                <h3 class="card__title">
+                  <a href="/product" class="card__link">Кресло с подлокотниками</a>
+                </h3>
+                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              </div>
               <button class="card__btn">В корзину</button>
               <button class="card__favourite">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -181,13 +187,15 @@
           </li>
           <li class="goods__item">
             <article class="goods__card card">
-              <a href="/product" class="card__link">
+              <a href="/product" class="card__link card__link_img">
                 <img src="/img/chair.jpg" alt="Кресло с подлокотниками" class="card__image">
               </a>
-              <h3 class="card__title">
-                <a href="/product" class="card__link">Кресло с подлокотниками</a>
-              </h3>
-              <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              <div class="card__info">
+                <h3 class="card__title">
+                  <a href="/product" class="card__link">Кресло с подлокотниками</a>
+                </h3>
+                <p class="card__price">5&nbsp;000&nbsp;₽</p>
+              </div>
               <button class="card__btn" type="button">В корзину</button>
               <button class="card__favourite" type="button">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -339,7 +347,7 @@
         </div>
       </div>
     </section>
-    <section class="cart">
+    <section class="cart" hidden>
       <div class="container">
         <h2 class="cart__title">Корзина</h2>
         <ul class="cart__products">
@@ -506,17 +514,18 @@
             </a>
           </li>
         </ul>
-        <ul class="footer__developer developer">
-          <li class="developer__item">
-            Designer:
-            <a href="https://t.me/Mrshmallowww" class="developer__link">Anastasia Ilina</a>
-          </li>.<li class="developer__item">
-            Developer:
-            <a href="https://t.me/Floriel" class="developer__link">Nikita Skorodumov</a>
-          </li>
-        </ul>
-        <p class="footer__copyright">© Koff, 2023</p>
       </div>
+      <ul class="footer__developer-list">
+        <li class="footer__developer-item">
+          Designer:
+          <a href="https://t.me/Mrshmallowww" class="footer__developer-link">Anastasia Ilina</a>
+        </li>
+        <li class="footer__developer-item">
+          Developer:
+          <a href="https://t.me/Floriel" class="footer__developer-link">Nikita Skorodumov</a>
+        </li>
+      </ul>
+      <p class="footer__copyright">© Koff, 2023</p>
     </div>
     <!-- /.container -->
   </footer>
