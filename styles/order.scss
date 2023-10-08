@@ -1,0 +1,107 @@
+.order {
+
+  padding-top: 32px;
+
+  @media (min-width: 580px) {
+    padding-top: 60px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__block {
+    display: block;
+    border-radius: 16px;
+    border: 1px solid #EEEFF2;
+    padding: 24px 16px;
+    @media (min-width: 580px) {
+      padding: 60px 151px;
+    }
+  
+    @media (min-width: 820px) {
+      padding: 60px 159px;
+    }
+  
+    @media (min-width: 1120px) {
+      padding: 60px 212px;
+      max-width: 832px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+
+    @media (min-width: 580px) {
+      flex-direction: row;
+      gap: 77px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+
+    @media (min-width: 580px) {
+      font-size: 20px;
+    }
+  }
+
+  &__price {
+    font-size: 16px;
+
+    @media (min-width: 580px) {
+      font-size: 20px;
+    }
+  }
+
+  &__article {
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 32px;
+    background-color: #EEEFF2;
+    padding: 4px 8px;
+    margin-bottom: 24px;
+
+    @media (min-width: 580px) {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    border-radius: 32px;
+    border: 1px solid transparent;
+    background: #780096;
+    padding: 12px 24px;
+    color: #FFF;
+    text-align: center;
+    font-size: 12px;
+    transition: all 0.5s;
+    outline: 1px solid #780096;
+
+  &:hover,
+    &:focus-visible {
+      background-color: #9200B7;
+      outline: 1px solid #9200B7;
+    }
+
+  &:active {
+    outline: 1px solid #C0F;
+  }
+  }
+}
