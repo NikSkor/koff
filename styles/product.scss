@@ -156,6 +156,7 @@
     border: 1px solid transparent;
     background-color: #780096;
     border-radius: 32px;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
       background-color: #9200b7;
