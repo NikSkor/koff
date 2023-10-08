@@ -63,7 +63,7 @@
   <!-- /.header -->
   <main class="main">
     <h1 class="visually-hidden">Koff - мебельный маркет номер 1!</h1>
-    <div class="catalog">
+    <div class="catalog" hidden>
       <div class="container catalog__container">
         <ul class="catalog__list">
           <li class="catalog__item">
@@ -100,7 +100,7 @@
       </div>
     </div>
     <!-- /.catalog -->
-    <div class="breadcrumb">
+    <div class="breadcrumb" hidden>
       <div class="container">
         <ul class="breadcrumb__list">
           <li class="breadcrumb__item">
@@ -118,7 +118,7 @@
         </ul>
       </div>
     </div>
-    <section class="goods" >
+    <section class="goods" hidden>
       <div class="container">
         <h2 class="goods__title">Избранное</h2>
         <ul class="goods__list">
@@ -392,7 +392,7 @@
             <p class="cart__place-price">20 000 ₽</p>
           </div>
             <p class="cart__place-delivery">Доставка 0 ₽</p>
-            <button class="cart__place-btn" type="submit" form="order">
+            <button class="cart__place-btn" type="submit" form="order">Оформить заказ
             </button>
         </div>
         <form action="" class="cart__form form-order" id="form" method="post">
@@ -427,42 +427,42 @@
     </section>
     <section class="order">
       <div class="container order__container">
-        <div class="order__info">
-          <h3 class="order__title">Заказ успешно размещен</h3>
-          <p class="order__price">20 000 ₽</p>
+        <div class="order__block">
+          <div class="order__info">
+            <h3 class="order__title">Заказ успешно размещен</h3>
+            <p class="order__price">20&nbsp;000&nbsp;₽</p>
+          </div>
           <p class="order__article">№43435</p>
+          <h4 class="order__subtitle">Данные доставки</h4>
+          <table class="order__table table">
+            <tr class="table__row">
+              <td class="table__field">Получатель</td>
+              <td class="table__value">Иванов Петр Александрович</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__field">Телефон</td>
+              <td class="table__value">+7 (737) 346 23 00</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__field">E-mail</td>
+              <td class="table__value">Ivanov84@gmail.com</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__field">Адрес доставки</td>
+              <td class="table__value">Москва, ул. Ленина, 21, кв. 33</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__field">Способ оплаты</td>
+              <td class="table__value">Картой при получении</td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__field">Способ получения</td>
+              <td class="table__value">Доставка</td>
+            </tr>
+          </table>
+          <a href="/" class="order__btn">На главную
+          </a>
         </div>
-        <h4 class="order__subtitle">Данные доставки</h4>
-        <table class="order__table table">
-          <tr class="table__row">
-            <td class="table__field">Получатель</td>
-            <td class="table__value">Иванов Петр Александрович</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__field">Телефон</td>
-            <td class="table__value">+7 (737) 346 23 00</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__field">E-mail</td>
-            <td class="table__value">Ivanov84@gmail.com</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__field">Адрес доставки</td>
-            <td class="table__value">Москва, ул. Ленина, 21, кв. 33</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__field">Способ оплаты</td>
-            <td class="table__value">Картой при получении</td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__field">Способ получения</td>
-            <td class="table__value">Доставка</td>
-          </tr>
-          
-        </table>
-
-        <a href="/" class="order__btn" form="order">На главную
-        </a>
       </div>
     </section>
     <!-- /.order -->
