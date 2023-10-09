@@ -1,13 +1,10 @@
 import 'normalize.css';
 import './style.scss';
 import Navigo from 'navigo';
-// import Swiper from 'swiper';
-// import { Navigation, Pagination } from 'swiper/modules';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-
-
+import { Header } from './modules/Header/Header';
+import { Main } from './modules/Main/Main';
+import { Footer } from './modules/Footer/Footer';
+import { Order } from './modules/Order/Order';
 
 const productSlider = () => {
   Promise.all([
@@ -38,6 +35,12 @@ const productSlider = () => {
 
 
 const init = () => {
+  new Header().mount();
+  new Main().mount();
+  new Footer().mount();
+
+
+
   productSlider();
 
   const router = new Navigo('/', {linksSelector: 'a[href^="/"]'});
@@ -51,7 +54,9 @@ const init = () => {
     .on('/search', () => {})
     .on('/product/:id', (obj) => {})
     .on('/cart', () => {})
-    .on('/order', () => {})
+    .on('/order', () => {
+      new Order().mount(new Main().element);
+    })
     .notFound(() => {
       document.body.innerHTML = '<h2>Страница не найдена</h2>'
     });
