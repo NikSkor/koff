@@ -17,6 +17,7 @@
     appearance: none;
     padding: 2px;
     margin-right: 8px;
+    transition: all 0.5s ease-in-out;
 
     &:before {
       content: "";

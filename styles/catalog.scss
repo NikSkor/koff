@@ -39,7 +39,7 @@
     color: #969EAE;
     outline: none;
     border: 1px solid transparent;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
 
     &:hover,
     &:focus-visible {
