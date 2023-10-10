@@ -1,5 +1,3 @@
-import { addContainer } from '../addContainer';
-
 export class Main {
   static unstance = null;
 

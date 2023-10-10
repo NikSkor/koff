@@ -5,6 +5,7 @@ import { Header } from './modules/Header/Header';
 import { Main } from './modules/Main/Main';
 import { Footer } from './modules/Footer/Footer';
 import { Order } from './modules/Order/Order';
+import { ProductList } from './modules/ProductList/ProductList';
 
 const productSlider = () => {
   Promise.all([
@@ -46,7 +47,21 @@ const init = () => {
   const router = new Navigo('/', {linksSelector: 'a[href^="/"]'});
 
   router
-    .on('/', () => {})
+    .on(
+      '/',
+      () => {
+        new ProductList().mount(new Main().element, [1, 2, 3], 'Hi Bitches');
+      },
+      {
+        leave(done) {
+          done();
+          console.log('leave');
+        },
+        already() {
+          console.log('already');
+        },
+      }
+    )
     .on('/category', () => {
       console.log('category');
     })
@@ -57,9 +72,23 @@ const init = () => {
     .on('/order', () => {
       new Order().mount(new Main().element);
     })
-    .notFound(() => {
-      document.body.innerHTML = '<h2>Страница не найдена</h2>'
-    });
+    .notFound(
+      () => {
+        new Main().element.innerHTML = `<section class='container error__container'><h2>Страница не найдена</h2>
+      <p>Через 5 секунд Вы будете перенаправлены на <a href='/'>главную страницу</a></p></section>
+      `;
+
+        setTimeout(() => {
+          router.navigate('/');
+        }, 5000);
+      },
+      {
+        leave(done) {
+          document.body.querySelector('.error__container').remove();
+          done();
+        },
+      }
+    );
 
   router.resolve();
 
