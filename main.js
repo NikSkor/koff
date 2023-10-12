@@ -8,6 +8,7 @@ import { Order } from './modules/Order/Order';
 import { ProductList } from './modules/ProductList/ProductList';
 import { ApiService } from './services/ApiService';
 import { Catalog } from './modules/Catalog/Catalog';
+import { NotFoundPage } from './modules/NotFoundPage/NotFoundPage';
 
 const productSlider = () => {
   Promise.all([
@@ -106,17 +107,14 @@ const init = () => {
     })
     .notFound(
       () => {
-        new Main().element.innerHTML = `<section class='container error__container'><h2>Страница не найдена</h2>
-      <p>Через 5 секунд Вы будете перенаправлены на <a href='/'>главную страницу</a></p></section>
-      `;
-
+        new NotFoundPage().mount(new Main().element);
         setTimeout(() => {
           router.navigate('/');
         }, 5000);
       },
       {
         leave(done) {
-          document.body.querySelector('.error__container').remove();
+          document.body.querySelector('.error').remove();
           done();
         },
       }
