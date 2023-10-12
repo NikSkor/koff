@@ -1,12 +1,14 @@
 import axios from "axios";
 import { API_URL } from "../const";
+import { LocalStorageService } from "./LocalStorageService";
 
 export class ApiService {
   #apiUrl = API_URL;
 
   constructor() {
-    this.accessKey = localStorage.getItem('accessKey');
-    console.log('accessKey: ', this.accessKey);
+    // this.accessKey = localStorage.getItem('accessKey');
+    this.accessKey = new LocalStorageService().get('accessKey');
+    // console.log('accessKey: ', this.accessKey);
   }
 
   async getAccessKey() {
@@ -14,7 +16,8 @@ export class ApiService {
       if (!this.accessKey) {
         const response = await axios.get(`${this.#apiUrl}api/users/accessKey`);
         this.accessKey = response.data.accessKey;
-        localStorage.setItem('accessKey', this.accessKey);
+        // localStorage.setItem('accessKey', this.accessKey);
+        new LocalStorageService().set('accessKey', this.accessKey);
       }
     } catch (error) {
       console.log('error: ', error);
@@ -40,8 +43,8 @@ export class ApiService {
     } catch (error) {
       if(error.response && error.response.status === 401) {
         this.accessKey = null;
-        localStorage.removeItem('accessKey');
-
+        // localStorage.removeItem('accessKey');
+        new LocalStorageService().delete('accessKey');
         return this.getData(url, params);
       } else {
         console.log(error);
