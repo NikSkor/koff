@@ -27,7 +27,7 @@ export class NotFoundPage {
 
     const text = document.createElement('p');
     text.classList.add('error__text');
-    text.innerHTML = `Через 5 секунд Вы будете перенаправлены на <a href='/' class='error__link'>главную страницу</a>`;
+    text.innerHTML = `Через 5 секунд Вы будете перенаправлены на <a href='/' class='error__link'>главную страницу.</a>`;
 
     this.containerElement.append(title, text);
 
