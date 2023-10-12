@@ -6,12 +6,30 @@ export class ApiService {
 
   constructor() {
     this.accessKey = localStorage.getItem('accessKey');
-    console.log('accessKey: ', accessKey);
+    console.log('accessKey: ', this.accessKey);
   }
 
-  async getData(url, params = {}) {
+  async getAccessKey() {
     try {
-      const response = await axios.get(url, {
+      if (!this.accessKey) {
+        const response = await axios.get(`${this.#apiUrl}api/users/accessKey`);
+        this.accessKey = response.data.accessKey;
+        localStorage.setItem('accessKey', this.accessKey);
+      }
+    } catch (error) {
+      console.log('error: ', error);
+      
+    }
+
+    
+  }
+
+  async getData(pathname, params = {}) {
+    if(!this.accessKey) {
+      await this.getAccessKey();
+    }
+    try {
+      const response = await axios.get(`${this.#apiUrl}${pathname}`, {
         headers: {
           Authorization: `Bearer ${this.accessKey}`,
         },
@@ -29,5 +47,15 @@ export class ApiService {
         console.log(error);
       }
     }
+  }
+
+  async getProducts(page = 1, limit = 12, list, category, search) {
+    return await this.getData('api/products', {
+      page,
+      limit,
+      list,
+      category,
+      search,
+    });
   }
 }
